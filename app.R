@@ -26,9 +26,9 @@ ui <-fluidPage(theme = shinytheme("cosmo"),
                
   sidebarPanel(
     
-    h4('Below are 8 different restaruants from which you can "order".'),
+    h4('Below are 8 different restaurants from which you can "order".'),
     
-    h4("Select a dish (or dishes) and find meals recommended for you at other restaruants!"),
+    h4("Select a dish (or dishes) and find meals recommended for you at other restaurants!"),
     
     h5("Tuk Tuk Thai Cuisine", a("Tuktuk's menu", href="http://www.tuktukthaicuisine.com/index.php/tuk-tuk-menu")),
     
