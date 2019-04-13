@@ -83,21 +83,21 @@ server <- function(input,output) {
     
     zero_init[select_inds]<-ones_in
     
-    jin<-rbind(colnames(bin_ratings),zero_init,c(1,rep(0,706)))
+    newdat<-rbind(colnames(bin_ratings),zero_init,c(1,rep(0,706)))
     
-    colnames(jin)<-colnames(bin_ratings)
+    colnames(newdat)<-colnames(bin_ratings)
     
-    jin<-as.data.frame(jin)
+    newdat<-as.data.frame(newdat)
     
-    jin<-jin[-1,]
+    newdat<-newdat[-1,]
     
-    jin<-apply(jin,2,function(x) as.numeric(as.character(x)))
+    newdat<-apply(newdat,2,function(x) as.numeric(as.character(x)))
     
-    jin<-as.matrix(jin)
+    newdat<-as.matrix(newdat)
     
-    jin_ratings<-as(jin,"binaryRatingMatrix")
+    newdat_ratings<-as(newdat,"binaryRatingMatrix")
     
-    recommendations <- predict(model, jin_ratings, n = 500)
+    recommendations <- predict(model, newdat_ratings, n = 500)
     
     to_tab<-as(recommendations, "list")[[1]]
     
