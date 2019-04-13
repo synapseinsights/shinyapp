@@ -18,16 +18,37 @@ Orient<-restaurant_names[[6]]
 SaltHill<-restaurant_names[[7]]
 Sushiya<-restaurant_names[[8]]
 
-ui <-fluidPage(theme = shinytheme("sandstone"),
-               
+ui <-fluidPage(theme = shinytheme("cosmo"),
+  
+  tags$head(tags$style(HTML("a {color: blue}"))),             
                
   headerPanel('TasteSpace Recommendation Engine'),
                
   sidebarPanel(
+    
+    h4('Below are 8 different restaruants from which you can "order".'),
+    
+    h4("Select a dish (or dishes) and find meals recommended for you at other restaruants!"),
+    
+    h5("Tuk Tuk Thai Cuisine", a("Tuktuk's menu", href="http://www.tuktukthaicuisine.com/index.php/tuk-tuk-menu")),
+    
+    h5("Mollys Restaurant and Bar", a("Mollys' menu", href="https://static1.squarespace.com/static/53346523e4b07ce0259fd9d9/t/5bbd0e5f0d9297a50e7b677c/1539116640312/Mollys-Menu-0918KTXT+White.pdf")),
                  
-      selectInput('dataset', 'Choose Restaurant', c('SaltHill', 'Murphys','Tuktuk','Lous','JewelOfIndia','Orient','Sushiya','Mollys')),
+    h5("Lous Restaurant and Bakery", a("Lous' menu", href="https://www.lousrestaurant.com/pages/menu")),
+    
+    h5("Murphys Pub", a("Murphys' menu", href="http://www.murphysonthegreen.com/dinner-menu/")),
+    
+    h5("Jewel of India", a("Jewel's menu", href="http://www.jewelofindiahanover.com/menu.html")),
+    
+    h5("Orient Chinese and Japanese Restaurant", a("Orient's menu", href="http://www.hanoverorient.com/menu.html")),
+    
+    h5("Salt Hill Pub", a("Salt Hill's menu", href="https://www.salthillpub.com/locations/hanover/hanover-menu/")),
+    
+    h5("Sushiya Japanese and Korean Cuisine", a("Sushiya's menu", href="https://www.hanoversushiya.com/")),
+    
+    selectInput('dataset', 'Choose Restaurant', c('SaltHill', 'Murphys','Tuktuk','Lous','JewelOfIndia','Orient','Sushiya','Mollys')),
                  
-      uiOutput("items_out")
+    uiOutput("items_out")
                  
   ),
                
@@ -196,5 +217,6 @@ server <- function(input,output) {
 
 shinyApp(ui = ui, server = server)
 
+#rsconnect::deployApp('C:/Users/dasil/Dropbox/tastespace/Tastespace')
 
 
