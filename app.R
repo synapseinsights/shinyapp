@@ -1,11 +1,10 @@
 
-#
+
 library(shiny)
 library(recommenderlab)
 library(shinythemes)
 library(tools)
 
-#C:/Users/dasil/Dropbox/tastespace/
 load("bin_ratings.RData")
 load("IBCF_model.RData")
 load("restaurant_names.RData")
@@ -22,42 +21,42 @@ Sushiya<-restaurant_names[[8]]
 ui <-fluidPage(theme = shinytheme("sandstone"),
                
                
-               headerPanel('TasteSpace Recommendation Engine'),
+  headerPanel('TasteSpace Recommendation Engine'),
                
-               sidebarPanel(
+  sidebarPanel(
                  
-                 selectInput('dataset', 'Choose Restaurant', c('SaltHill', 'Murphys','Tuktuk','Lous','JewelOfIndia','Orient','Sushiya','Mollys')),
+      selectInput('dataset', 'Choose Restaurant', c('SaltHill', 'Murphys','Tuktuk','Lous','JewelOfIndia','Orient','Sushiya','Mollys')),
                  
-                 uiOutput("items_out")
+      uiOutput("items_out")
                  
-               ),
+  ),
                
                
-               mainPanel(
+  mainPanel(
                  
-                 tags$style(type="text/css",".shiny-output-error { visibility: hidden; }",".shiny-output-error:before { visibility: hidden; }"),
+    tags$style(type="text/css",".shiny-output-error { visibility: hidden; }",".shiny-output-error:before { visibility: hidden; }"),
                  
-                 fluidRow(
+    fluidRow(
                    
-                   column(4,tableOutput("selected_app"),
+        column(4,tableOutput("selected_app"),
                           
-                          tableOutput("selected_app2"),
+          tableOutput("selected_app2"),
                           
-                          tableOutput("selected_app3")),
+          tableOutput("selected_app3")),
                    
-                   column(4,tableOutput("selected_app4"),
+        column(4,tableOutput("selected_app4"),
                           
-                          tableOutput("selected_app5"),
+          tableOutput("selected_app5"),
                           
-                          tableOutput("selected_app6")),
+          tableOutput("selected_app6")),
                    
-                   tableOutput("selected_app7"),
+        tableOutput("selected_app7"),
                    
-                   tableOutput("selected_app8")
+        tableOutput("selected_app8")
                    
-                 )
+    )
                  
-               )
+  )
                
 )  
 
