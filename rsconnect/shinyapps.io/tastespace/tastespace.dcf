@@ -1,0 +1,10 @@
+name: tastespace
+title:
+username:
+account: tastespace
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 873132
+bundleId: 2019518
+url: https://tastespace.shinyapps.io/tastespace/
+when: 1555534438.05902

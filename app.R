@@ -217,6 +217,6 @@ server <- function(input,output) {
 
 shinyApp(ui = ui, server = server)
 
-#rsconnect::deployApp('C:/Users/dasil/Dropbox/tastespace/Tastespace')
+#rsconnect::deployApp('C:/Users/dasil/Dropbox/tastespace/Tastespace', account = "tastespace")
 
 
