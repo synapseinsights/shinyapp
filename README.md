@@ -11,3 +11,11 @@ app.R = shinyapp
 # Instructions
 
 Make sure all .RData files are in working directory, open "app.R" and run the entire file. The shiny app should open locally.
+
+To publish this app on shinapps.io:
+
+1. install rsconnect: install.packages("rsconnect")
+
+2. authorize account: rsconnect::setAccountInfo(name = "tastespace", token = "xxxx", secret = "xxxx")
+
+3. rsconnect::deployApp('path/to/app', account = "tastespace")
