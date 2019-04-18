@@ -97,6 +97,8 @@ server <- function(input,output) {
       
     }
     
+    select_inds<-sort(select_inds)
+    
     ones_in<-rep(1,len_selects)
     
     zero_init<-rep(0,ncol(bin_ratings))
