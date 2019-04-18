@@ -5,8 +5,8 @@ library(recommenderlab)
 library(shinythemes)
 library(tools)
 
-load("bin_ratings.RData")
-load("IBCF_model.RData")
+load("bin_ratings_clean.RData")
+load("IBCF_model_clean.RData")
 load("restaurant_names.RData")
 
 Tuktuk<-restaurant_names[[1]]
@@ -93,7 +93,7 @@ server <- function(input,output) {
     
     for (i in 1:len_selects){
       
-      select_inds[i] <-grep(selections[i],colnames(bin_ratings))
+      select_inds[i] <-grep(selections[i],colnames(bin_ratings_clean))
       
     }
     
@@ -101,13 +101,13 @@ server <- function(input,output) {
     
     ones_in<-rep(1,len_selects)
     
-    zero_init<-rep(0,ncol(bin_ratings))
+    zero_init<-rep(0,ncol(bin_ratings_clean))
     
     zero_init[select_inds]<-ones_in
     
-    newdat<-rbind(colnames(bin_ratings),zero_init,c(1,rep(0,706)))
+    newdat<-rbind(colnames(bin_ratings_clean),zero_init,c(1,rep(0,ncol(bin_ratings_clean) -1)))
     
-    colnames(newdat)<-colnames(bin_ratings)
+    colnames(newdat)<-colnames(bin_ratings_clean)
     
     newdat<-as.data.frame(newdat)
     

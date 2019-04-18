@@ -5,6 +5,6 @@ account: tastespace
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 873132
-bundleId: 2021595
+bundleId: 2021643
 url: https://tastespace.shinyapps.io/tastespace/
-when: 1555603277.45474
+when: 1555604872.18859
